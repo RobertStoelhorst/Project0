@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+body {
+  background-color: #1b1f1c
+}
+
+h1 {
+  color: #7ff59d;
+  font-family: 'Courier Prime', monospace;
+  text-align: center;
+  text-shadow: 4px 4px white;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+  font-size: 120px;
+  letter-spacing: 6px;
+}
+
+h2 {
+  display: block;
+  position: relative;
+  margin: auto;
+  color: white;
+  text-align: center;
+  padding: 0px 10px 30px 10px;
+  font-size: 35px;
+
+}
+
+.container {
+  display: block;
+  background-color: white;
+  width: 476px;
+  height: 480px;
+  margin: auto;
+  border: 3px solid pink;
+  border-radius: 1em;
+  padding: 5px;
+}
+
+.boxGrid {
+  display: inline-block;
+  font-family: sans-serif;
+  width: 150px;
+  height: 150px;
+  color: pink;
+  background-color: #11baed;
+  border: 3px solid pink;
+  border-radius: 0.1em;
+  text-align: center;
+  vertical-align: middle;
+  margin: 2px 0px;
+  font-size: 110px;
+}
+
+#reset-button {
+  display: block;
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
+  font-family: 'Courier Prime', monospace;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  letter-spacing: 5px;
+  border: 2px solid pink;
+  border-radius: 0.2em;
+  font-size: 20px;
+}
+
+footer {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  font-size: 12px;
+}
