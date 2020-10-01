@@ -1,10 +1,9 @@
-console.log("is this working");
-
 $(document).ready(function() {
 
 let player = 1;
 const playerX = "X";
 const playerO = "O";
+let win;
 
 const winningCombos = [
     [0, 1, 2],
@@ -21,53 +20,48 @@ let gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
 
   const gamePlay = function() {
     // mark move function for player X or player O
-    if (player == 1) {
-      $("h2").text("Its O's turn")
-    gameArray[this.id] = playerX;
-    for (let i = 0; i < gameArray.length; i++) {
-    $("#" + i).text(gameArray[i]);
-  // } if $("div#0").text("X") || $("div#0").text("O") {
-  //     return false;
-  //   }
-      // console.log($("#" + i))
-      console.log(gameArray);
-    };
-       let changeTurn = player++;
-    } else if (player == 2) {
-       $("h2").text("Its X's turn")
-     gameArray[this.id] = playerO;
-     for (let i = 0; i < gameArray.length; i++) {
-     $("#" + i).text(gameArray[i]);
-      // } if $(".boxGrid").text() = "X" || $("boxGrid").text() = "O" {
-      //     return false;
-      //   }
-     };
-     player = 1;
-     // checkForWin()
-   };
+        if (player == 1) {
+          if (gameArray[this.id] === "X" || gameArray[this.id] === "O"){
+            return false;
+          }
+            $("h2").text("Its O's turn")
+            gameArray[this.id] = playerX
+               for (let i = 0; i < gameArray.length; i++) {
+                $("#" + i).text(gameArray[i]);
+              // checkForWin()
+            };
+          let changeTurn = player++;
+
+        } else if (player == 2) {
+            if (gameArray[this.id] === "X" || gameArray[this.id] === "O"){
+              return false;
+            }
+                $("h2").text("Its X's turn")
+                 gameArray[this.id] = playerO
+                  for (let i = 0; i < gameArray.length; i++) {
+                   $("#" + i).text(gameArray[i]);
+                  // checkForWin()
+            };
+          player = 1;
+      };
 };
 
 const reset = function() {
   alert (`Are you sure you want to "bail out"?`)
   gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
-  for (let i = 0; i < gameArray.length; i++) {
-  const a = $("#" + i).text(gameArray[i]);
-  };
-};
+  for (let i = 0; i < gameArray.length; i++)
+  $(".boxGrid").fadeOut(400).text(gameArray[i])
+  $(".boxGrid").fadeIn(2500).text();
+ };
 
+ // function checkForWin() {
+ //     let winner = null;
+ //     winningCombos.forEach(function(combo, index) {
+ //         if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) winner = board[combo[0]];
+ //         });
+ //
+ // };
 
-  // const checkForWin = function() {
-  //   if (winningCombos === i)
-  //   console.log(`you win`)
-  // }
-
-
-  // $(".boxGrid").on("click", function() {
-  //   const $cellChoice = $(this);
-  //   if ($cellChoice.text === "X") {
-  //     return false;
-  //   } else if ($cellChoice.text === "O") {
-  //     return false;
 
 
   $(".boxGrid").on('click', gamePlay);
