@@ -28,7 +28,7 @@ let gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
             gameArray[this.id] = playerX
                for (let i = 0; i < gameArray.length; i++) {
                 $("#" + i).text(gameArray[i]);
-              // checkForWin()
+              checkForWin()
             };
           let changeTurn = player++;
 
@@ -40,32 +40,37 @@ let gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
                  gameArray[this.id] = playerO
                   for (let i = 0; i < gameArray.length; i++) {
                    $("#" + i).text(gameArray[i]);
-                  // checkForWin()
+                  checkForWin()
             };
           player = 1;
       };
 };
 
 const reset = function() {
-  alert (`Are you sure you want to "bail out"?`)
   gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
   for (let i = 0; i < gameArray.length; i++)
   $(".boxGrid").fadeOut(400).text(gameArray[i])
-  $(".boxGrid").fadeIn(2500).text();
+  $(".boxGrid").fadeIn(2500).text("");
+  $(".boxGrid").on('click', gamePlay);
+  player = 1;
+  $("h2").text("Its X's turn")
  };
 
- // function checkForWin() {
- //     let winner = null;
- //     winningCombos.forEach(function(combo, index) {
- //         if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) winner = board[combo[0]];
- //         });
- //
- // };
-
-
-
+ function checkForWin() {
+  let winner = null;
+  const combo = winningCombos;
+   winningCombos.forEach(function(combo, index) {
+        if (gameArray[combo[0]] && gameArray[combo[0]] ===       gameArray[combo[1]] && gameArray[combo[0]] === gameArray[combo[2]]) winner = gameArray[combo[0]];
+           if (winner === "X") {
+            $("h2").text("X WINS THE ROUND")
+             $(".boxGrid").unbind('click', gamePlay);
+           }
+            else if (winner === "O") {
+             $("h2").text("O WINS THE ROUND")
+              $(".boxGrid").unbind('click', gamePlay);
+           }
+        });
+      };
   $(".boxGrid").on('click', gamePlay);
-
   $("#reset-button").on('click', reset);
-
 });
