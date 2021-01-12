@@ -51,7 +51,7 @@ let gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
 
 const reset = function() {
   gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
-  for (let i = 0; i < gameArray.length; i++)
+  for (let i = 1; i < gameArray.length + 1; i++) 
   $(".boxGrid").fadeOut(400).text(gameArray[i])
   $(".boxGrid").fadeIn(2500).text("");
   $(".boxGrid").on('click', gamePlay);
