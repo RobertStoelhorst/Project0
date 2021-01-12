@@ -52,11 +52,11 @@ let gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
 const reset = function() {
   gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
   for (let i = 1; i < gameArray.length + 1; i++) 
-  $(".boxGrid").fadeOut(400).text(gameArray[i])
-  $(".boxGrid").fadeIn(2500).text("");
-  $(".boxGrid").on('click', gamePlay);
-  player = 1, oScore = 0, xScore = 0;
-  $("h2").text("Its X's turn")
+    $(".boxGrid").fadeOut(400).text(gameArray[i])
+    $(".boxGrid").fadeIn(2500).text("");
+    $(".boxGrid").on('click', gamePlay);
+    player = 1, oScore = 0, xScore = 0;
+    $("h2").text("Its X's turn")
  };
 
  function checkForWin() {
