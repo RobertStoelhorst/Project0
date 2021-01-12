@@ -9,6 +9,7 @@ h1 {
   font-family: 'Courier Prime', monospace;
   text-align: center;
   text-shadow: 4px 4px white;
+  margin: auto;
   margin-top: 10px;
   margin-bottom: 0px;
   text-transform: capitalize;
