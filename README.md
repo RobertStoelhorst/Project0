@@ -1,20 +1,30 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #0: The Game
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #0: Tic Tac Toe
 
 ### Game Hosted@ https://robertstoelhorst.github.io/Project0/
 
 Let's start out with something fun - **a game!**
 
-**We'll be making Tic Tac Toe**, a game that takes seconds to learn but minutes to master! Everyone will get a chance to **be creative**, and work through some really **tough programming challenges** to get your feet wet in the world of web development.
+**We'll be making Tic Tac Toe**, a game that takes seconds to learn but minutes to master!
 
-> "hand me your phone," load up the game, and play a quick round!
+![](images/tic-tac-toe.png)
+
+> This was my very first project and for many a great starting point, I highly recommend having a go as there is soo many different ways to go about building this game, It can probably be built in any language you are learning on. For me at the time it was plain HTML5 CSS3 Javascript/ES6 with the Jquery library.
 
 **You will be working individually for this project**, but we'll be guiding you along the process and helping as you go. Show us what you've got!
 
 ---
 
-### What You've Learned
+### What I've Learned
 
-By the time you submit this project, you will have covered new ground in many of the big themes of the course:
+for me this was totally all about learning some base level developer logic, program structure and starting to understand the DOM!
+
+while there are some sections of the code I look at and have to ponder and take some time to understand what is happening over all this project makes sense as to how it all works.
+
+
+### To Do's
+
+I have a bug with my score-board to fix sometimes i get a decimal point score returned I thought of storing the score in an array and then having a seperate function to calculate the scores, but I think there is probably a simpler way.
+
 
 - **Command Line**: Practice interacting with the computer and navigating the filesystem from the command line.
 - **Source Control**: Manage and interact with a git repository to store changes to code.
