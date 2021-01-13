@@ -1,11 +1,12 @@
 $(document).ready(function() {
 
 let player = 1;
-const playerX = "X";
-const playerO = "O";
-let xScore = 0;
-let oScore = 0;
-let win;
+const playerX = "X", playerO = "O";
+let xScore = 0, oScore = 0;
+let xPoints = 0; 
+let oPoints = 0;
+console.log(xPoints)
+console.log(oPoints)
 
 const winningCombos = [
     [0, 1, 2],
@@ -20,8 +21,7 @@ const winningCombos = [
 
 let gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
 
-  const gamePlay = function() {
-    // checkForWin()
+  const gamePlay = function () {
         if (player == 1) {
           if (gameArray[this.id] === "X" || gameArray[this.id] === "O"){
             return false;
@@ -49,7 +49,7 @@ let gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
       };
 };
 
-const reset = function() {
+const reset = function () {
   gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
   for (let i = 1; i < gameArray.length + 1; i++) 
     $(".boxGrid").fadeOut(400).text(gameArray[i])
@@ -59,19 +59,20 @@ const reset = function() {
     $("h2").text("Its X's turn")
  };
 
- function checkForWin() {
+ const checkForWin = function () {
   let winner = null;
-  const combo = winningCombos;
    winningCombos.forEach(function(combo) {
         if (gameArray[combo[0]] && gameArray[combo[0]] === gameArray[combo[1]] && gameArray[combo[0]] === gameArray[combo[2]]) winner = gameArray[combo[0]];
            if (winner === "X") {
             $("h2").text("X WINS THE ROUND")
-            console.log(xScore)
-             $(".boxGrid").unbind('click', gamePlay);
-           }
-            else if (winner === "O") {
+            $(".boxGrid").unbind('click', gamePlay);
+            scoreCounter(winner);
+
+           } else if (winner === "O") {
              $("h2").text("O WINS THE ROUND")
-              $(".boxGrid").unbind('click', gamePlay);
+             $(".boxGrid").unbind('click', gamePlay);
+            scoreCounter(winner);
+
            } else if (xScore === 5 || oScore === 5) {
             $("h2").text("! DRAW")
             $(".boxGrid").unbind('click', gamePlay);
@@ -80,6 +81,17 @@ const reset = function() {
            }
         });
       };
+
+  const scoreCounter = function (winner) {
+    if (winner === "X") {
+      xPoints++;
+      $("#scoreX").text(xPoints / 5);
+    } else if (winner === "O") {
+      oPoints++;
+      $("#scoreO").text(oPoints / 5);
+    }
+  };
+
 
   $(".boxGrid").on('click', gamePlay);
   $("#reset-button").on('click', reset);

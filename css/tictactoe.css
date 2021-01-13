@@ -54,6 +54,14 @@ h2 {
   font-size: 110px;
 }
 
+ul {
+  color: white;
+}
+
+/* #scoreX, #scoreO {
+  color: white;
+} */
+
 #reset-button {
   display: block;
   position: relative;
