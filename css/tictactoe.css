@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
 body {
-  background-color: #1b1f1c
+  background-color: #1b1f1c;
 }
 
 h1 {
   color: #7ff59d;
-  font-family: 'Courier Prime', monospace;
   text-align: center;
   text-shadow: 4px 4px white;
   margin: auto;
@@ -19,12 +18,10 @@ h1 {
 
 h2 {
   display: block;
-  position: relative;
   margin: auto;
-  color: white;
   text-align: center;
   padding: 0px 10px 30px 10px;
-  font-size: 35px;
+  font-size: 55px;
 
 }
 
@@ -54,8 +51,15 @@ h2 {
   font-size: 110px;
 }
 
+.headings {
+  color: blueviolet;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 ul {
   color: white;
+  list-style-type: none;
+  font-size: 40px;
 }
 
 /* #scoreX, #scoreO {

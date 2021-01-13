@@ -3,10 +3,7 @@ $(document).ready(function() {
 let player = 1;
 const playerX = "X", playerO = "O";
 let xScore = 0, oScore = 0;
-let xPoints = 0; 
-let oPoints = 0;
-console.log(xPoints)
-console.log(oPoints)
+let xPoints = 0, oPoints = 0;
 
 const winningCombos = [
     [0, 1, 2],
@@ -85,10 +82,10 @@ const reset = function () {
   const scoreCounter = function (winner) {
     if (winner === "X") {
       xPoints++;
-      $("#scoreX").text(xPoints / 5);
+      $("#scoreX").text("X Game Wins" + " " + xPoints / 5);
     } else if (winner === "O") {
       oPoints++;
-      $("#scoreO").text(oPoints / 5);
+      $("#scoreO").text("O Game Wins" + " " + oPoints / 5);
     }
   };
 
