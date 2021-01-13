@@ -81,11 +81,11 @@ const reset = function () {
 
   const scoreCounter = function (winner) {
     if (winner === "X") {
-      xPoints++;
-      $("#scoreX").text("X Game Wins" + " " + xPoints / 5);
+      xPoints += 1;
+      $("#scoreX").text("X Game Wins" + " " + (xPoints / 5));
     } else if (winner === "O") {
-      oPoints++;
-      $("#scoreO").text("O Game Wins" + " " + oPoints / 5);
+      oPoints += 1;
+      $("#scoreO").text("O Game Wins" + " " + (oPoints / 5));
     }
   };
 
