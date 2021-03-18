@@ -63,11 +63,11 @@ const reset = function () {
            if (winner === "X") {
             $("h2").text("X WINS THE ROUND")
             $(".boxGrid").unbind('click', gamePlay);
-            // scoreCounter(winner);
+            // scoreCounter(winner); // This was the bug for the scoreboard I was calling the scoreCounter() function every time the checkForWin() ran which incorectly calculated and updated score
            } else if (winner === "O") {
              $("h2").text("O WINS THE ROUND")
              $(".boxGrid").unbind('click', gamePlay);
-            // scoreCounter(winner);
+            // scoreCounter(winner); // This was the bug for the scoreboard I was calling the scoreCounter() function every time the checkForWin() ran which incorectly calculated and updated score
            } else if (xScore === 5 || oScore === 5) {
             $("h2").text("! DRAW")
             $(".boxGrid").unbind('click', gamePlay);
@@ -75,7 +75,7 @@ const reset = function () {
               return false;
            }
         });
-        scoreCounter(winner);
+        scoreCounter(winner); // This is where scoreCounter needs to run outside the condition body of checkForWin()
       };
 
   const scoreCounter = function (winner) {
