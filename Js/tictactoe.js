@@ -29,7 +29,7 @@ let gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
                 $("#" + i).text(gameArray[i]);
               }
             } 
-            player++, xScore++;
+            player++; 
             checkForWin()
         } else if (player == 2) {
             if (gameArray[this.id] === "X" || gameArray[this.id] === "O"){
@@ -41,7 +41,7 @@ let gameArray = [" ", " ", " ", " ", " ", " ", " ", " ", " ",];
                  $("#" + i).text(gameArray[i]);
                 }
             }
-            player = 1, oScore++;
+            player = 1;
             checkForWin()
       };
 };
@@ -63,13 +63,11 @@ const reset = function () {
            if (winner === "X") {
             $("h2").text("X WINS THE ROUND")
             $(".boxGrid").unbind('click', gamePlay);
-            scoreCounter(winner);
-
+            // scoreCounter(winner);
            } else if (winner === "O") {
              $("h2").text("O WINS THE ROUND")
              $(".boxGrid").unbind('click', gamePlay);
-            scoreCounter(winner);
-
+            // scoreCounter(winner);
            } else if (xScore === 5 || oScore === 5) {
             $("h2").text("! DRAW")
             $(".boxGrid").unbind('click', gamePlay);
@@ -77,15 +75,16 @@ const reset = function () {
               return false;
            }
         });
+        scoreCounter(winner);
       };
 
   const scoreCounter = function (winner) {
-    if (winner === "X") {
-      xPoints += 1;
-      $("#scoreX").text("X Game Wins" + " " + (xPoints / 5));
-    } else if (winner === "O") {
-      oPoints += 1;
-      $("#scoreO").text("O Game Wins" + " " + (oPoints / 5));
+    if (winner === playerX) {
+      xPoints++;
+      $("#scoreX").text("X Game Wins" + " " + (xPoints));
+    } else if (winner === playerO) {
+      oPoints++;
+      $("#scoreO").text("O Game Wins" + " " + (oPoints));
     }
   };
 
